@@ -1,0 +1,53 @@
+{
+    "question" : "What is your gender?",
+    "answers"  : [
+                    {
+                        "text"   : "Male",
+                        "result" : {
+                                        "question" : "Can you cook?",
+                                        "answers"  : [
+                                                        {
+                                                            "text"   : "Yes",
+                                                            "result" : "http://www.youtube.com/watch?v=2DoM83G3lk0"
+                                                        },
+                                                        {
+                                                            "text"   : "No",
+                                                            "result" : "http://www.youtube.com/watch?v=95AsGlPYR7U"
+                                                        }
+                                                     ]
+                                   }
+                    },
+                    {
+                        "text"   : "Female",
+                        "result" : {
+                                        "question" : "Can you code?",
+                                        "answers"  : [
+                                                        {
+                                                            "text"   : "Yes",
+                                                            "result" : "http://www.reddit.com/r/programming"
+                                                        },
+                                                        {
+                                                            "text"   : "No",
+                                                            "result" : {
+                                                                    "question" : "Learn a language?",
+                                                                    "answers"  : [
+                                                                                    {
+                                                                                        "text"   : "PHP",
+                                                                                        "result" : "http://devzone.zend.com/6/"
+                                                                                    },
+                                                                                    {
+                                                                                        "text"   : "Python",
+                                                                                        "result" : "http://www.learnpython.org/"
+                                                                                    },
+                                                                                    {
+                                                                                        "text"   : "Spanish",
+                                                                                        "result" : "http://www.studyspanish.com/"
+                                                                                    }
+                                                                                 ]
+                                                               }
+                                                        }
+                                                     ]
+                                   }
+                    }
+                 ]
+}

@@ -1,0 +1,43 @@
+.questionr {
+  color: #222222;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.questionr .innerWrapper {
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  margin-left: -15%;
+  top: 15%;
+  background: white;
+  border-radius: 0.3em;
+  z-index: 2;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+}
+.questionr .innerWrapper .questionWrapper {
+  text-align: center;
+  font-size: 4em;
+  line-height: 1.6em;
+}
+.questionr .innerWrapper .questionWrapper .answersWrapper {
+  font-size: 0.25em;
+}
+.questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper {
+  display: inline;
+  margin-right: 3em;
+  padding: 1em 3em;
+  background: #cccccc;
+  border-radius: 0.15em;
+}
+.questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+.questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper:last-child {
+  margin-right: 0;
+}
