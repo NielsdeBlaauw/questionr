@@ -6,7 +6,7 @@ A library for displaying succesive questions on the client side. Questions confi
 Usage
 -----
 
-Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/questionr/css/questionr.css) in the page `<head>`. Include the [javascript library](https://github.com/NDeBlaauw/questionr/blob/master/questionr/js/questionr.js) before the end of the `<body>` tag.
+Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/questionr/css/questionr.css) in the page `<head>`. Include the [javascript library](https://github.com/NDeBlaauw/questionr/blob/master/questionr/js/questionr.js) before the end of the `<body>` tag. Lastly create a Questionr instance and use the `init` method when you want the modal to open.
 
 ```html
 <html>
@@ -19,6 +19,7 @@ Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/ques
     </div>
     <script type="text/javascript">
       var questionr = new Questionr('questionr',{%JSON OBJECT like in questionr/js/example-config.json%});
+      questionr.init();
     </script>
   </body>
 </html>

@@ -2,8 +2,12 @@ var Questionr = function(element, questions){
     this.element = document.getElementById(element);
     this.questions = questions;
     this.getElement().setAttribute('class', 'questionr');
-    this._renderQuestion();
 };
+
+Questionr.prototype.init = function(){
+    this._renderQuestion();
+    return this;
+}
 
 Questionr.prototype._renderQuestion = function(){
     this.getElement().innerHTML = '';
