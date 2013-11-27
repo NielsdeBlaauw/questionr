@@ -1,7 +1,7 @@
 Questionr
 =========
 
-A library for displaying succesive questions on the client side. Questions configured in a tree like form, with questions that have answers, and answers that lead to new  questions. Questions are fed one-by-one to the user until an end node is found. When an end node has been reached, the user will be redirected to the corresponding  url.
+A library for displaying successive questions on the client side. Questions configured in a tree like form, with questions that have answers, and answers that lead to new  questions. Questions are fed one-by-one to the user until an end node is found. When an end node has been reached, the user will be redirected to the corresponding  url.
 
 Usage
 -----

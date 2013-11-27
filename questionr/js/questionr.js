@@ -1,16 +1,20 @@
 var Questionr = function(element, questions){
     this.element = document.getElementById(element);
     this.questions = questions;
-    this.getElement().setAttribute('class', 'questionr');
 };
 
 Questionr.prototype.init = function(){
+    this.getElement().setAttribute('class', 'questionr');
     this._renderQuestion();
     return this;
 }
 
-Questionr.prototype._renderQuestion = function(){
+Questionr.prototype._clearElement = function(){
     this.getElement().innerHTML = '';
+}
+
+Questionr.prototype._renderQuestion = function(){
+    this._clearElement();
     var innerWrapper = document.createElement("div");
     innerWrapper.setAttribute('class', 'innerWrapper');
     var questionWrapper = document.createElement("div");
@@ -49,6 +53,11 @@ Questionr.prototype.answerClick = function(target){
         this.questions = answer.result;
         this._renderQuestion();
     }
+}
+
+Questionr.prototype.close = function(){
+    this.getElement().removeAttribute('class');
+    this._clearElement();
 }
 
 Questionr.prototype._isLeaf = function(answer){
