@@ -15,9 +15,9 @@ Questionr.prototype._renderQuestion = function(){
     var answersWrapper = document.createElement("div");
     answersWrapper.setAttribute('class', 'answersWrapper');
     questionWrapper.appendChild(questionText);
-    for(var i = 0; i < this.getQuestion().answers.length; i++){
-        var answer = this.getQuestion().answers[i];
-        this._renderAnswer(answer, i, answersWrapper);
+    for(var answerIndex = 0; answerIndex < this.getQuestion().answers.length; answerIndex++){
+        var answer = this.getQuestion().answers[answerIndex];
+        this._renderAnswer(answer, answerIndex, answersWrapper);
     }
     questionWrapper.appendChild(answersWrapper);
     innerWrapper.appendChild(questionWrapper);
