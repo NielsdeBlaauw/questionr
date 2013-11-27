@@ -34,4 +34,4 @@ Use cases
 About the project
 -----------------
 
-Currently made in vanilla JavaScript without dependencies to minimize the ease of implementing. The stylesheet is written in Less. Edit [the theme file](https://github.com/NDeBlaauw/questionr/blob/master/questionr/css/questionr.less) to customize the look.
+Currently made in vanilla JavaScript without dependencies to minimize the ease of implementing. The stylesheet is written in Less. Edit [the theme file](https://github.com/NDeBlaauw/questionr/blob/master/questionr/css/theme.less) to customize the look.

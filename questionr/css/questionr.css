@@ -1,6 +1,7 @@
 .questionr {
-  color: #222222;
-  background: rgba(0, 0, 0, 0.7);
+  font-family: arial, sans-serif;
+  color: #a69f8c;
+  background: rgba(255, 255, 255, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -10,32 +11,35 @@
 }
 .questionr .innerWrapper {
   position: absolute;
-  width: 30%;
+  width: 40%;
   left: 50%;
-  margin-left: -15%;
+  margin-left: -20%;
   top: 15%;
-  background: white;
+  background: #4f4539;
   border-radius: 0.3em;
   z-index: 2;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
 }
 .questionr .innerWrapper .questionWrapper {
   text-align: center;
-  font-size: 4em;
-  line-height: 1.6em;
+  font-size: 2em;
+  padding: 0.5em;
 }
 .questionr .innerWrapper .questionWrapper .answersWrapper {
-  font-size: 0.25em;
+  font-size: 0.5em;
+  margin: 2em;
 }
 .questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper {
+  color: #4f4539;
   display: inline;
   margin-right: 3em;
   padding: 1em 3em;
-  background: #cccccc;
+  background: #dcd3ca;
   border-radius: 0.15em;
+  font-weight: bold;
 }
 .questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper:hover {
-  background: #ddd;
+  background: #f0ece9;
   cursor: pointer;
 }
 .questionr .innerWrapper .questionWrapper .answersWrapper .answerButtonWrapper:last-child {

@@ -1,6 +1,9 @@
+@import "theme.less";
+
 .questionr{
-    color: #222;
-    background: rgba(0,0,0,0.7);
+    font-family: @questionrFont;
+    color: @questionColor;
+    background: @shadowBox;
     position: fixed;
     top: 0;
     left: 0;
@@ -9,28 +12,31 @@
     z-index: 1;
     .innerWrapper{
         position: absolute;
-        width: 30%;
+        width: 40%;
         left: 50%;
-        margin-left: -15%;
+        margin-left: -20%;
         top: 15%;
-        background: white;
+        background: @brandBackground;
         border-radius: 0.3em;
         z-index: 2;
         box-shadow: 0 0 1em rgba(0,0,0,0.9);
         .questionWrapper{
             text-align: center;
-            font-size: 4em;
-            line-height: 1.6em;
+            font-size: 2em;
+            padding: 0.5em;
             .answersWrapper{
-                font-size: 0.25em;
+                font-size: 0.5em;
+                margin: 2em;
                 .answerButtonWrapper{
+                    color: @buttonTextColor;
                     display: inline;
                     margin-right: 3em;
                     padding: 1em 3em;
-                    background: #ccc;
+                    background: @brandMain;
                     border-radius: 0.15em;
+                    font-weight: bold;
                     &:hover{
-                        background: #ddd;
+                        background: lighten(@brandMain, 10);
                         cursor: pointer;
                     }
                     &:last-child{
