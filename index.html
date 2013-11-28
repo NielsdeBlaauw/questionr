@@ -23,57 +23,70 @@
         <script type="text/javascript">
             var questionr = new Questionr('questionr',{
                 "question" : "What is your gender?",
+                "name"     : "gender",
                 "answers"  : [
-                                {
-                                    "text"   : "Male",
-                                    "result" : {
-                                                    "question" : "Can you cook?",
-                                                    "answers"  : [
-                                                                    {
-                                                                        "text"   : "Yes",
-                                                                        "result" : "http://www.youtube.com/watch?v=2DoM83G3lk0"
-                                                                    },
-                                                                    {
-                                                                        "text"   : "No",
-                                                                        "result" : "http://www.youtube.com/watch?v=95AsGlPYR7U" 
-                                                                    }
-                                                                 ]
-                                               }
-                                },
-                                {
-                                    "text"   : "Female",
-                                    "result" : {
-                                                    "question" : "Can you code?",
-                                                    "answers"  : [
-                                                                    {
-                                                                        "text"   : "Yes",
-                                                                        "result" : "http://www.reddit.com/r/programming"
-                                                                    },
-                                                                    {
-                                                                        "text"   : "No",
-                                                                        "result" : {
-                                                                                "question" : "Learn a language?",
-                                                                                "answers"  : [
-                                                                                                {
-                                                                                                    "text"   : "PHP",
-                                                                                                    "result" : "http://devzone.zend.com/6/"
-                                                                                                },
-                                                                                                {
-                                                                                                    "text"   : "Python",
-                                                                                                    "result" : "http://www.learnpython.org/"    
-                                                                                                },
-                                                                                                {
-                                                                                                    "text"   : "Spanish",
-                                                                                                    "result" : "http://www.studyspanish.com/"   
-                                                                                                }
-                                                                                             ]
-                                                                           }
-                                                                    }
-                                                                 ]
-                                               }
-                                }
-                             ]
-            });
+                    {
+                        "text"   : "Male",
+                        "value"  : "m",
+                        "result" : {
+                                        "question" : "Can you cook?",
+                                        "name"     : "cook",
+                                        "answers"  : [
+                                                        {
+                                                            "text"   : "Yes",
+                                                            "value"  : true,
+                                                            "result" : "http://www.youtube.com/watch?v=2DoM83G3lk0"
+                                                        },
+                                                        {
+                                                            "text"   : "No",
+                                                            "value"  : false,
+                                                            "result" : "http://www.youtube.com/watch?v=95AsGlPYR7U"
+                                                        }
+                                                     ]
+                                   }
+                    },
+                    {
+                        "text"   : "Female",
+                        "value"  : "f",
+                        "result" : {
+                                        "question" : "Can you code?",
+                                        "name"     : "code",
+                                        "answers"  : [
+                                                        {
+                                                            "text"   : "Yes",
+                                                            "value"  : true,
+                                                            "result" : "http://www.reddit.com/r/programming"
+                                                        },
+                                                        {
+                                                            "text"   : "No",
+                                                            "value"  : false,
+                                                            "result" : {
+                                                                    "question" : "Learn a language?",
+                                                                    "name"     : "language",
+                                                                    "answers"  : [
+                                                                                    {
+                                                                                        "text"   : "PHP",
+                                                                                        "value"  : "php",
+                                                                                        "result" : "http://devzone.zend.com/6/"
+                                                                                    },
+                                                                                    {
+                                                                                        "text"   : "Python",
+                                                                                        "value"  : "python",
+                                                                                        "result" : "http://www.learnpython.org/"
+                                                                                    },
+                                                                                    {
+                                                                                        "text"   : "Spanish",
+                                                                                        "value"  : "spanish",
+                                                                                        "result" : "http://www.studyspanish.com/"
+                                                                                    }
+                                                                                 ]
+                                                               }
+                                                        }
+                                                     ]
+                                   }
+                    }
+                 ]
+                });
             questionr.init();
         </script>
     </body>

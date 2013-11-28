@@ -1,6 +1,7 @@
 var Questionr = function(element, questions){
     this.element = document.getElementById(element);
     this.questions = questions;
+    this.results = {};
 };
 
 Questionr.prototype.init = function(){
@@ -47,12 +48,21 @@ Questionr.prototype._renderAnswer = function(answer, answerIndex, element){
 Questionr.prototype.answerClick = function(target){
     var answerIndex = target.target.getAttribute('data-answer-index');
     var answer = this.getQuestion().answers[answerIndex];
+    this._addResult(this.getQuestion().name, answer.value);
     if(this._isLeaf(answer)){
         document.location = answer.result;
     }else{
         this.questions = answer.result;
         this._renderQuestion();
     }
+}
+
+Questionr.prototype._addResult = function(key, value){
+    this.results[key] = value;
+}
+
+Questionr.prototype.getResults = function(){
+    return this.results;
 }
 
 Questionr.prototype.close = function(){
