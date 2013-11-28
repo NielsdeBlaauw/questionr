@@ -6,6 +6,8 @@ A library for displaying successive questions on the client side. Questions conf
 Usage
 -----
 
+### Installation
+
 Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/questionr/css/questionr.css) in the page `<head>`. Include the [javascript library](https://github.com/NDeBlaauw/questionr/blob/master/questionr/js/questionr.js) before the end of the `<body>` tag. Lastly create a Questionr instance and use the `init` method when you want the modal to open.
 
 ```html
@@ -24,6 +26,26 @@ Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/ques
   </body>
 </html>
 ```
+
+### Methods
+
+The following events are available on the Questionr Object.
+
+|    Method    |                             Description                              |
+| ------------ | -------------------------------------------------------------------- |
+| init()       | Opens the modal and starts the questionaire.                         |
+| close()      | Closes the modal window.                                             |
+| getEndNode() | Returns the node where the user ended up.                            |
+| getResults() | Returns the results to all the questions that the user has answered. |
+
+### Events
+
+The following events can be triggered on the DOM element *Questionr* has been bound to.
+
+|     Event      |               Description               |
+| -------------- | --------------------------------------- |
+| choseAnswer    | The user has chosen an answer.          |
+| reachedEndNode | The user has reached the end of a path. |
 
 Use cases
 ---------

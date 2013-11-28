@@ -87,6 +87,15 @@
                     }
                  ]
                 });
+
+            document.getElementById("questionr").addEventListener("reachedEndNode", function(target){
+                console.log(questionr.getEndNode(), questionr.getResults());
+                questionr.close();
+                setTimeout(function(){
+                    document.location = questionr.getEndNode().result;
+                },5000);
+            });
+
             questionr.init();
         </script>
     </body>

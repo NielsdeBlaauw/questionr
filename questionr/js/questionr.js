@@ -2,6 +2,7 @@ var Questionr = function(element, questions){
     this.element = document.getElementById(element);
     this.questions = questions;
     this.results = {};
+    this.endNode = null;
 };
 
 Questionr.prototype.init = function(){
@@ -49,12 +50,31 @@ Questionr.prototype.answerClick = function(target){
     var answerIndex = target.target.getAttribute('data-answer-index');
     var answer = this.getQuestion().answers[answerIndex];
     this._addResult(this.getQuestion().name, answer.value);
-    if(this._isLeaf(answer)){
-        document.location = answer.result;
+    this._triggerAnswerEvent();
+    if(this._isEndNode(answer)){
+        this.endNode = answer;
+        this._triggerEndNodeReachedEvent();
     }else{
         this.questions = answer.result;
         this._renderQuestion();
     }
+}
+
+Questionr.prototype.getEndNode = function(){
+    if(typeof this.endNode !== "object"){
+        throw "No endNode has been reached yet.";
+    }
+    return this.endNode;
+}
+
+Questionr.prototype._triggerAnswerEvent = function(){
+    var event = new Event('choseAnswer');
+    this.getElement().dispatchEvent(event);
+}
+
+Questionr.prototype._triggerEndNodeReachedEvent = function(){
+    var event = new Event('reachedEndNode');
+    this.getElement().dispatchEvent(event);
 }
 
 Questionr.prototype._addResult = function(key, value){
@@ -70,8 +90,8 @@ Questionr.prototype.close = function(){
     this._clearElement();
 }
 
-Questionr.prototype._isLeaf = function(answer){
-    return typeof answer.result === 'string';
+Questionr.prototype._isEndNode = function(answer){
+    return typeof answer.result !== 'object';
 }
 
 Questionr.prototype.getElement = function(){
