@@ -19,7 +19,7 @@
         background: @brandBackground;
         border-radius: @borderRadius;
         z-index: 2;
-        box-shadow: 0 0 1em rgba(0,0,0,0.9);
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
         .questionWrapper{
             text-align: center;
             font-size: 2em;
@@ -30,17 +30,23 @@
                 .answerButtonWrapper{
                     color: @buttonTextColor;
                     display: inline;
-                    margin-right: 3em;
                     padding: 1em 3em;
                     background: @brandMain;
-                    border-radius: @borderRadius / 2;
+                    border-radius: 0;
+                    border-right: 1px solid darken(@brandMain, 10);
+                    border-left: 1px solid lighten(@brandMain, 10);
                     font-weight: bold;
                     &:hover{
                         background: lighten(@brandMain, 10);
                         cursor: pointer;
                     }
+                    &:first-child{
+                        border-radius: @borderRadius / 2 0 0 @borderRadius / 2;
+                        border-left: none;
+                    }
                     &:last-child{
-                        margin-right: 0;
+                        border-radius: 0 @borderRadius / 2 @borderRadius / 2 0;
+                        border-right: none;   
                     }
                 }
             }
