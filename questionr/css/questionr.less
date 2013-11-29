@@ -12,12 +12,12 @@
     z-index: 1;
     .innerWrapper{
         position: absolute;
-        width: 40%;
+        width: @outerWidth;
         left: 50%;
-        margin-left: -20%;
+        margin-left: @outerWidth / 2 * -1;
         top: 15%;
         background: @brandBackground;
-        border-radius: 0.3em;
+        border-radius: @borderRadius;
         z-index: 2;
         box-shadow: 0 0 1em rgba(0,0,0,0.9);
         .questionWrapper{
@@ -33,7 +33,7 @@
                     margin-right: 3em;
                     padding: 1em 3em;
                     background: @brandMain;
-                    border-radius: 0.15em;
+                    border-radius: @borderRadius / 2;
                     font-weight: bold;
                     &:hover{
                         background: lighten(@brandMain, 10);
