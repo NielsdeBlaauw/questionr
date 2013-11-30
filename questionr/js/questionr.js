@@ -1,9 +1,19 @@
 var Questionr = function(element, questions){
-    this.element = document.getElementById(element);
-    this.questions = questions;
-    this.results = {};
-    this.endNode = null;
+    this.element           = document.getElementById(element);
+    this.questions         = questions;
+    this.results           = {};
+    this.position          = 'bottom'; // top", "bottom", "left", "right"
+    this.endNode           = null;
+    this.possiblePositions = ['top', 'bottom', 'left', 'right'];
 };
+
+Questionr.prototype.setPosition = function(position){
+    if(this.possiblePositions.indexof(position) == -1){
+        console.warn('Illegal position');
+        position = this.position;
+    }
+    this.position = position;
+}
 
 Questionr.prototype.init = function(){
     this.getElement().setAttribute('class', 'questionr');
@@ -18,7 +28,7 @@ Questionr.prototype._clearElement = function(){
 Questionr.prototype._renderQuestion = function(){
     this._clearElement();
     var innerWrapper = document.createElement("div");
-    innerWrapper.setAttribute('class', 'innerWrapper');
+    innerWrapper.setAttribute('class', 'innerWrapper ' + this.position);
     var questionWrapper = document.createElement("div");
     questionWrapper.setAttribute('class', 'questionWrapper');
     var questionText = document.createTextNode(this.getQuestion().question);
