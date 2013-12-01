@@ -8,26 +8,39 @@
   border-radius: 0.5em;
   z-index: 2;
   box-shadow: 0 0 0.5em black;
+  transition: left 1s, bottom 1s, right 1s, top 1s;
 }
 .questionr .innerWrapper.bottom {
-  bottom: 0;
+  bottom: -100%;
   left: 10em;
   border-radius: 0.5em 0.5em 0 0;
 }
+.questionr .innerWrapper.bottom.showModal {
+  bottom: 0;
+}
 .questionr .innerWrapper.top {
-  top: 0;
+  top: -100%;
   right: 10em;
   border-radius: 0 0 0.5em 0.5em;
 }
+.questionr .innerWrapper.top.showModal {
+  top: 0;
+}
 .questionr .innerWrapper.left {
-  left: 0;
+  left: -100%;
   bottom: 10em;
   border-radius: 0 0.5em 0.5em 0;
 }
+.questionr .innerWrapper.left.showModal {
+  left: 0;
+}
 .questionr .innerWrapper.right {
-  right: 0;
+  right: -100%;
   bottom: 10em;
   border-radius: 0.5em 0 0 0.5em;
+}
+.questionr .innerWrapper.right.showModal {
+  right: 0;
 }
 .questionr .innerWrapper .questionWrapper {
   text-align: center;

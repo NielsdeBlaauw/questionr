@@ -8,7 +8,7 @@ var Questionr = function(element, questions){
 };
 
 Questionr.prototype.setPosition = function(position){
-    if(this.possiblePositions.indexof(position) == -1){
+    if(this.possiblePositions.indexOf(position) == -1){
         console.warn('Illegal position');
         position = this.position;
     }
@@ -42,6 +42,10 @@ Questionr.prototype._renderQuestion = function(){
     questionWrapper.appendChild(answersWrapper);
     innerWrapper.appendChild(questionWrapper);
     innerWrapper = this.getElement().appendChild(innerWrapper);
+    setTimeout(function(){
+        var currentClasses = innerWrapper.getAttribute('class');
+        innerWrapper.setAttribute('class', currentClasses + ' showModal');
+    }, 20);
 }
 
 Questionr.prototype._renderAnswer = function(answer, answerIndex, element){

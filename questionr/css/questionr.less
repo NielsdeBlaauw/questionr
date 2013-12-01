@@ -9,25 +9,38 @@
         border-radius: @borderRadius;
         z-index: 2;
         box-shadow: 0 0 0.5em rgba(0, 0, 0, 1);
+        transition: left @animationDuration, bottom @animationDuration, right @animationDuration, top @animationDuration;
         &.bottom{
-            bottom: 0;    
+            bottom: -100%;    
             left: 10em;
             border-radius: @borderRadius @borderRadius 0 0;
+            &.showModal{
+                bottom: 0;
+            }
         }
         &.top{
-            top: 0;
+            top: -100%;
             right: 10em;
             border-radius: 0 0 @borderRadius @borderRadius;
+            &.showModal{
+                top: 0;
+            }
         }
         &.left{
-            left: 0;
+            left: -100%;
             bottom: 10em;
             border-radius: 0 @borderRadius @borderRadius 0 ;
+            &.showModal{
+                left: 0;
+            }
         }
         &.right{
-            right: 0;
+            right: -100%;
             bottom: 10em;
             border-radius: @borderRadius 0 0 @borderRadius;
+            &.showModal{
+                right: 0;
+            }
         }
         .questionWrapper{
             text-align: center;
