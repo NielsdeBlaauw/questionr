@@ -16,7 +16,7 @@ Questionr.prototype.setPosition = function(position){
 }
 
 Questionr.prototype.init = function(){
-    this.getElement().setAttribute('class', 'questionr');
+    this.getElement().setAttribute('class', 'questionr ' + this.position);
     this._renderQuestion();
     return this;
 }
@@ -28,7 +28,7 @@ Questionr.prototype._clearElement = function(){
 Questionr.prototype._renderQuestion = function(){
     this._clearElement();
     var innerWrapper = document.createElement("div");
-    innerWrapper.setAttribute('class', 'innerWrapper ' + this.position);
+    innerWrapper.setAttribute('class', 'innerWrapper');
     var questionWrapper = document.createElement("div");
     questionWrapper.setAttribute('class', 'questionWrapper');
     var questionText = document.createTextNode(this.getQuestion().question);

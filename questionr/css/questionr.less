@@ -3,44 +3,55 @@
 .questionr{
     font-family: @questionrFont;
     color: @questionColor;
+    position: fixed;
+    z-index: 2;
+    overflow: hidden;
+    padding: 1em;
+    &.bottom{
+        bottom: 0;    
+        left: 10em;
+        padding-bottom: 0;
+        .innerWrapper{
+            border-radius: @borderRadius @borderRadius 0 0;
+            margin-bottom: -100%;
+        }
+    }
+    &.top{
+        top: 0;
+        right: 10em;
+        padding-top: 0;
+        .innerWrapper{
+            border-radius: 0 0 @borderRadius @borderRadius;
+            margin-top: -100%;
+        }
+    }
+    &.left{
+        left: 0;
+        bottom: 10em;
+        padding-left: 0;
+        .innerWrapper{
+            border-radius: 0 @borderRadius @borderRadius 0;
+            margin-left: -100%;
+            display: inline-block;
+        }
+    }
+    &.right{
+        right: 0;
+        bottom: 10em;
+        padding-right: 0;
+        .innerWrapper{
+            border-radius: @borderRadius 0 0 @borderRadius;
+            margin-right: -100%;
+            display: inline-block;
+        }
+    }
     .innerWrapper{
-        position: absolute;
         background: @brandBackground;
         border-radius: @borderRadius;
-        z-index: 2;
-        box-shadow: 0 0 0.5em rgba(0, 0, 0, 1);
-        transition: left @animationDuration, bottom @animationDuration, right @animationDuration, top @animationDuration;
-        &.bottom{
-            bottom: -100%;    
-            left: 10em;
-            border-radius: @borderRadius @borderRadius 0 0;
-            &.showModal{
-                bottom: 0;
-            }
-        }
-        &.top{
-            top: -100%;
-            right: 10em;
-            border-radius: 0 0 @borderRadius @borderRadius;
-            &.showModal{
-                top: 0;
-            }
-        }
-        &.left{
-            left: -100%;
-            bottom: 10em;
-            border-radius: 0 @borderRadius @borderRadius 0 ;
-            &.showModal{
-                left: 0;
-            }
-        }
-        &.right{
-            right: -100%;
-            bottom: 10em;
-            border-radius: @borderRadius 0 0 @borderRadius;
-            &.showModal{
-                right: 0;
-            }
+        box-shadow: 0 0 1em black;
+        transition: margin-right @animationDuration, margin-left @animationDuration, margin-top @animationDuration, margin-bottom @animationDuration;
+        &.showModal{
+            margin: 0;
         }
         .questionWrapper{
             text-align: center;
