@@ -14,6 +14,7 @@ Questionr.prototype.setPosition = function(position){
         position = this.position;
     }
     this.position = position;
+    return this;
 }
 
 Questionr.prototype.newCurrentQuestion = function(){
@@ -25,6 +26,11 @@ Questionr.prototype.newCurrentQuestion = function(){
 
 Questionr.prototype.getPickMethod = function(){
     return this.pickMethod;
+}
+
+Questionr.prototype.setPickMethod = function(pickMethod){
+    this.pickMethod = pickMethod;
+    return this;
 }
 
 Questionr.prototype.shuffleArray = function(){

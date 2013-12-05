@@ -31,13 +31,13 @@ Include the [stylesheet](https://github.com/NDeBlaauw/questionr/blob/master/ques
 
 The following events are available on the Questionr Object.
 
-|    Method     |                             Description                              |
-| ------------- | -------------------------------------------------------------------- |
-| init()        | Opens the modal and starts the questionaire.                         |
-| close()       | Closes the modal window.                                             |
-| getEndNode()  | Returns the node where the user ended up.                            |
-| getResults()  | Returns the results to all the questions that the user has answered. |
-| setPosition() | Sets the position of the box ('top', 'bottom', 'left', 'right')      |
+|      Method     |                             Description                              |
+| --------------- | -------------------------------------------------------------------- |
+| init()          | Opens the modal and starts the questionaire.                         |
+| close()         | Closes the modal window.                                             |
+| getResults()    | Returns the results to all the questions that the user has answered. |
+| setPosition()   | Sets the position of the box ('top', 'bottom', 'left', 'right')      |
+| setPickMethod() | Sets the picking method  ('random', 'linear')                        |
 
 ### Events
 
