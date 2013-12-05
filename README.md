@@ -37,7 +37,8 @@ The following events are available on the Questionr Object.
 | close()         | Closes the modal window.                                             |
 | getResults()    | Returns the results to all the questions that the user has answered. |
 | setPosition()   | Sets the position of the box ('top', 'bottom', 'left', 'right')      |
-| setPickMethod() | Sets the picking method  ('random', 'linear')                        |
+| setPickMethod() | Sets the picking method ('random', 'linear')                         |
+| setEndPoint()   | Sets the API endpoint to send data to ('endpoint.php', string)       |
 
 ### Events
 

@@ -5,6 +5,7 @@ var Questionr = function(element, questions){
     this.currentQuestion   = null;
     this.pickMethod        = 'random';
     this.position          = 'bottom'; // top", "bottom", "left", "right"
+    this.endPoint          = 'endpoint.php';
     this.possiblePositions = ['top', 'bottom', 'left', 'right'];
 };
 
@@ -17,9 +18,9 @@ Questionr.prototype.setPosition = function(position){
     return this;
 }
 
-Questionr.prototype.newCurrentQuestion = function(){
+Questionr.prototype._newCurrentQuestion = function(){
     if(this.getPickMethod() == 'random'){
-        this.shuffleArray();
+        this._shuffleArray();
     }
     this.currentQuestion = this.questions.shift();
 }
@@ -33,7 +34,12 @@ Questionr.prototype.setPickMethod = function(pickMethod){
     return this;
 }
 
-Questionr.prototype.shuffleArray = function(){
+Questionr.prototype.setEndPoint = function(endPoint){
+    this.endPoint = endPoint;
+    return this;
+}
+
+Questionr.prototype._shuffleArray = function(){
     var currentIndex = this.questions.length
     , temporaryValue
     , randomIndex;
@@ -54,7 +60,7 @@ Questionr.prototype.shuffleArray = function(){
 
 Questionr.prototype.init = function(){
     this.getElement().setAttribute('class', 'questionr ' + this.position);
-    this.newCurrentQuestion();
+    this._newCurrentQuestion();
     this._renderQuestion();
     return this;
 }
@@ -110,7 +116,7 @@ Questionr.prototype.answerClick = function(target){
         this._triggerEndNodeReachedEvent();
         this.close();
     }else{
-        this.newCurrentQuestion();
+        this._newCurrentQuestion();
         this._renderQuestion();
     }
 }
@@ -144,4 +150,8 @@ Questionr.prototype.getElement = function(){
 
 Questionr.prototype.getQuestion = function(){
     return this.currentQuestion;
+}
+
+Questionr.prototype.getEndPoint = function(){
+    return this.endPoint;
 }
