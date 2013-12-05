@@ -1,9 +1,10 @@
 var Questionr = function(element, questions){
     this.element           = document.getElementById(element);
-    this.questions         = questions;
+    this.questions         = questions.questions;
     this.results           = {};
+    this.currentQuestion   = null;
+    this.pickMethod        = 'random';
     this.position          = 'bottom'; // top", "bottom", "left", "right"
-    this.endNode           = null;
     this.possiblePositions = ['top', 'bottom', 'left', 'right'];
 };
 
@@ -15,8 +16,39 @@ Questionr.prototype.setPosition = function(position){
     this.position = position;
 }
 
+Questionr.prototype.newCurrentQuestion = function(){
+    if(this.getPickMethod() == 'random'){
+        this.shuffleArray();
+    }
+    this.currentQuestion = this.questions.shift();
+}
+
+Questionr.prototype.getPickMethod = function(){
+    return this.pickMethod;
+}
+
+Questionr.prototype.shuffleArray = function(){
+    var currentIndex = this.questions.length
+    , temporaryValue
+    , randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = this.questions[currentIndex];
+    this.questions[currentIndex] = this.questions[randomIndex];
+    this.questions[randomIndex] = temporaryValue;
+    }
+}
+
 Questionr.prototype.init = function(){
     this.getElement().setAttribute('class', 'questionr ' + this.position);
+    this.newCurrentQuestion();
     this._renderQuestion();
     return this;
 }
@@ -68,20 +100,13 @@ Questionr.prototype.answerClick = function(target){
     var answer = this.getQuestion().answers[answerIndex];
     this._addResult(this.getQuestion().name, answer.value);
     this._triggerAnswerEvent();
-    if(this._isEndNode(answer)){
-        this.endNode = answer;
+    if(this.questions.length === 0){
         this._triggerEndNodeReachedEvent();
+        this.close();
     }else{
-        this.questions = answer.result;
+        this.newCurrentQuestion();
         this._renderQuestion();
     }
-}
-
-Questionr.prototype.getEndNode = function(){
-    if(typeof this.endNode !== "object"){
-        throw "No endNode has been reached yet.";
-    }
-    return this.endNode;
 }
 
 Questionr.prototype._triggerAnswerEvent = function(){
@@ -107,14 +132,10 @@ Questionr.prototype.close = function(){
     this._clearElement();
 }
 
-Questionr.prototype._isEndNode = function(answer){
-    return typeof answer.result !== 'object';
-}
-
 Questionr.prototype.getElement = function(){
     return this.element;
 }
 
 Questionr.prototype.getQuestion = function(){
-    return this.questions;
+    return this.currentQuestion;
 }

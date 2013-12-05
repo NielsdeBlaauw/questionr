@@ -1,66 +1,66 @@
-{
-    "question" : "What is your gender?",
-    "name"     : "gender",
-    "answers"  : [
-                    {
-                        "text"   : "Male",
-                        "value"  : "m",
-                        "result" : {
-                                        "question" : "Can you cook?",
-                                        "name"     : "cook",
-                                        "answers"  : [
-                                                        {
-                                                            "text"   : "Yes",
-                                                            "value"  : true,
-                                                            "result" : "http://www.youtube.com/watch?v=2DoM83G3lk0"
-                                                        },
-                                                        {
-                                                            "text"   : "No",
-                                                            "value"  : false,
-                                                            "result" : "http://www.youtube.com/watch?v=95AsGlPYR7U"
-                                                        }
-                                                     ]
-                                   }
-                    },
-                    {
-                        "text"   : "Female",
-                        "value"  : "f",
-                        "result" : {
-                                        "question" : "Can you code?",
-                                        "name"     : "code",
-                                        "answers"  : [
-                                                        {
-                                                            "text"   : "Yes",
-                                                            "value"  : true,
-                                                            "result" : "http://www.reddit.com/r/programming"
-                                                        },
-                                                        {
-                                                            "text"   : "No",
-                                                            "value"  : false,
-                                                            "result" : {
-                                                                    "question" : "Learn a language?",
-                                                                    "name"     : "language",
-                                                                    "answers"  : [
-                                                                                    {
-                                                                                        "text"   : "PHP",
-                                                                                        "value"  : "php",
-                                                                                        "result" : "http://devzone.zend.com/6/"
-                                                                                    },
-                                                                                    {
-                                                                                        "text"   : "Python",
-                                                                                        "value"  : "python",
-                                                                                        "result" : "http://www.learnpython.org/"
-                                                                                    },
-                                                                                    {
-                                                                                        "text"   : "Spanish",
-                                                                                        "value"  : "spanish",
-                                                                                        "result" : "http://www.studyspanish.com/"
-                                                                                    }
-                                                                                 ]
-                                                               }
-                                                        }
-                                                     ]
-                                   }
-                    }
-                 ]
+{   
+    "questions":[
+        {
+            "question" : "What is your gender?",
+            "name"     : "gender",
+            "answers"  : [
+                            {
+                                "text"   : "Male",
+                                "value"  : "m"
+                            },
+                            {
+                                "text"   : "Female",
+                                "value"  : "f"
+                            }
+                         ]
+        },
+        {
+            "question" : "How do you rate this site?",
+            "name"     : "siteRating",
+            "answers"  : [
+                            {
+                                "text"   : "1",
+                                "value"  : "1"
+                            },
+                            {
+                                "text"   : "2",
+                                "value"  : "2"
+                            },
+                            {
+                                "text"   : "3",
+                                "value"  : "3"
+                            },
+                            {
+                                "text"   : "4",
+                                "value"  : "4"
+                            },
+                            {
+                                "text"   : "5",
+                                "value"  : "5"
+                            }
+                         ]
+        },
+        {
+            "question" : "How often do you fly?",
+            "name"     : "flyFrequency",
+            "answers"  : [
+                            {
+                                "text"   : "Daily",
+                                "value"  : "1"
+                            },
+                            {
+                                "text"   : "Weekly",
+                                "value"  : "2"
+                            },
+                            {
+                                "text"   : "Monthly",
+                                "value"  : "3"
+                            },
+                            {
+                                "text"   : "Yearly",
+                                "value"  : "4"
+                            }
+                         ]
+        }
+    ]
 }
