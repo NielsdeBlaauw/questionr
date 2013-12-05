@@ -31,10 +31,13 @@ Questionr.prototype._renderQuestion = function(){
     innerWrapper.setAttribute('class', 'innerWrapper');
     var questionWrapper = document.createElement("div");
     questionWrapper.setAttribute('class', 'questionWrapper');
+    var questionHeader = document.createElement("div");
+    questionHeader.setAttribute('class', 'questionHeader');
     var questionText = document.createTextNode(this.getQuestion().question);
     var answersWrapper = document.createElement("div");
     answersWrapper.setAttribute('class', 'answersWrapper');
-    questionWrapper.appendChild(questionText);
+    questionHeader.appendChild(questionText);
+    questionWrapper.appendChild(questionHeader);
     for(var answerIndex = 0; answerIndex < this.getQuestion().answers.length; answerIndex++){
         var answer = this.getQuestion().answers[answerIndex];
         this._renderAnswer(answer, answerIndex, answersWrapper);

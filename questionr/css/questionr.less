@@ -1,76 +1,96 @@
-@import "theme.less";
+@import "themes/card.theme.less";
 
 .questionr{
     font-family: @questionrFont;
-    color: @questionColor;
     position: fixed;
     z-index: 2;
     overflow: hidden;
     padding: 1em;
     &.bottom{
-        bottom: 0;    
+        bottom: 0;
         left: 10em;
-        padding-bottom: 0;
+        padding-bottom: @spaceFromEdge;
         .innerWrapper{
             border-radius: @borderRadius @borderRadius 0 0;
             margin-bottom: -100%;
+            .questionHeader{
+                border-radius: @borderRadius @borderRadius 0 0 !important;
+            }
         }
     }
     &.top{
         top: 0;
         right: 10em;
-        padding-top: 0;
+        padding-top: @spaceFromEdge;
         .innerWrapper{
             border-radius: 0 0 @borderRadius @borderRadius;
             margin-top: -100%;
+            .questionHeader{
+                border-radius: 0 0 0 0 !important;
+            }
         }
     }
     &.left{
         left: 0;
         bottom: 10em;
-        padding-left: 0;
+        padding-left: @spaceFromEdge;
         .innerWrapper{
             border-radius: 0 @borderRadius @borderRadius 0;
             margin-left: -100%;
             display: inline-block;
+            .questionHeader{
+                border-radius: 0 @borderRadius 0 0 !important;
+            }
         }
     }
     &.right{
         right: 0;
         bottom: 10em;
-        padding-right: 0;
+        padding-right: @spaceFromEdge;
         .innerWrapper{
             border-radius: @borderRadius 0 0 @borderRadius;
             margin-right: -100%;
             display: inline-block;
+            .questionHeader{
+                border-radius: @borderRadius 0 0 0 !important;
+            }
         }
     }
     .innerWrapper{
+        border: @outerBorder;
         background: @brandBackground;
         border-radius: @borderRadius;
-        box-shadow: 0 0 1em black;
+        box-shadow: 0 0 @boxShadowAmount black;
         transition: margin-right @animationDuration, margin-left @animationDuration, margin-top @animationDuration, margin-bottom @animationDuration;
         &.showModal{
             margin: 0;
         }
         .questionWrapper{
-            text-align: center;
             font-size: 1em;
-            padding: 0.5em;
+            .questionHeader{
+                border-bottom: @headerStripe;
+                padding: @headerPadding;
+                text-align: @headerAlign;
+                border-radius: @borderRadius @borderRadius 0 0;
+                box-shadow: @headerShadow;
+                color: @headerTextColor;
+            }
             .answersWrapper{
                 font-size: 0.8em;
-                margin: 2em;
+                padding: @buttonsMargin;
+                text-align: @buttonAlign;
                 .answerButtonWrapper{
                     color: @buttonTextColor;
                     display: inline;
-                    padding: 1em 3em;
-                    background: @brandMain;
+                    background: @buttonBackground;
                     border-radius: 0;
-                    border-right: 1px solid darken(@brandMain, 10);
-                    border-left: 1px solid lighten(@brandMain, 10);
-                    font-weight: bold;
+                    border-right: 1px solid darken(@buttonBackground, 10);
+                    border-left: 1px solid lighten(@buttonBackground, 10);
+                    font-weight: @buttonWeight;
+                    padding: @buttonPadding;
+                    box-shadow: @buttonShadow;
                     &:hover{
-                        background: lighten(@brandMain, 10);
+                        background: lighten(@buttonBackground, 10);
                         cursor: pointer;
                     }
                     &:first-child{
